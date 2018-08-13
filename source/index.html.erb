@@ -5,7 +5,18 @@ title: Le Wagon - Middleman
 
 <%= partial "components/banner" %>
 
-<%= partial "components/card" %>
+<div class="cards">
+  <h1>Recent flats</h1>
+  <div class="container">
+    <div class="row">
+      <% data.cards.each do |card| %>
+        <%= partial "components/card", locals: { card: card } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
 
 <%= partial "components/footer" %>
 
