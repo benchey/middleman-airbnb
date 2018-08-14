@@ -9,8 +9,8 @@ title: Le Wagon - Middleman
   <h1>Recent flats</h1>
   <div class="container">
     <div class="row">
-      <% data.cards.each do |card| %>
-        <%= partial "components/card", locals: { card: card } %>
+      <% data.flats.each do |owner, flat| %>
+        <%= partial "components/card", locals: {flat: flat, owner: owner} %>
       <% end %>
     </div>
   </div>

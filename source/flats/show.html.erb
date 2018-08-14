@@ -1,0 +1,104 @@
+<% flat = data.flats[owner] %>
+
+<%= partial "components/flat_banner", locals: { flat: flat } %>
+<!-- Inject flat data in template -->
+
+<div class="header-flat">
+  <div class="container">
+    <div class="row">
+      <div class="col col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="flat-info">
+          <div class="avatar">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle" %>
+            <p><%= owner %></p>
+          </div>
+          <div class="description">
+            <h1><%= flat.description %></h1>
+            <p><%= flat.city_name %></p>
+            <p>
+              <% flat.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-xs-12 col-sm-4">
+        <form action="#" class="form-group">
+        <h4>Book this flat</h4>
+          <div class="row">
+            <div class="col-xs-6 form-group">
+              <input type="text" class="form-control" placeholder="checkin">
+            </div>
+            <div class="col-xs-6 form-group">
+              <input type="text" class="form-control" placeholder="checkout">
+            </div>
+          </div>
+          <select name="" id="guests" class="form-control form-group">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+          </select>
+          <input type="submit" value="Book it" class="btn btn-danger btn-block">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container about">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="flat-description">
+        <h4>About this flat</h4>
+        <p>
+        This one bedroom studio lodges 2 people (there's 1 double bed) it is located in the city center, in a calm traditional residential area near city´s main Avenue.
+        </p>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="flat-data">
+    <div class="col col-xs-12 col-sm-2 col-sm-offset-1">
+      <p>The Space</p>
+    </div>
+    <div class="col col-xs-12 col-sm-3">
+      <ul class="list-unstyled">
+        <li>Accommodates: <strong>2</strong></li>
+        <li>Bathrooms: <strong>1</strong></li>
+        <li>Bed type: <strong>Real Bed</strong></li>
+        <li>Bedrooms: <strong>1</strong></li>
+      </ul>
+    </div>
+    <div class="col col-xs-12 col-sm-3">
+      <ul class="list-unstyled">
+        <li>Beds: <strong>1</strong></li>
+        <li>Property type: <strong>Apartment</strong></li>
+        <li>Room type: <strong>Entire home/apt</strong></li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="row" id="flat-data">
+    <div class="col col-xs-12 col-sm-2 col-sm-offset-1">
+      <p>Amenities</p>
+    </div>
+    <div class="col col-xs-12 col-sm-3">
+      <ul class="list-unstyled">
+        <li><i class="fas fa-utensils"></i> <strong>Kitchen</strong></li>
+        <li><i class="fas fa-wifi"></i> <strong>Wifi</strong></li>
+      </ul>
+    </div>
+    <div class="col col-xs-12 col-sm-3">
+      <ul class="list-unstyled">
+        <li><i class="fas fa-desktop"></i> <strong>TV</strong></li>
+        <li><i class="fas fa-glass-martini"></i> <strong>Welcome drink</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<%= partial "components/footer" %>
